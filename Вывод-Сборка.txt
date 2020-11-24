@@ -1,0 +1,7 @@
+﻿1>------ Сборка начата: проект: Project6.4.2, Конфигурация: Debug x64 ------
+2>------ Сборка начата: проект: UnitTest6.4.2, Конфигурация: Debug x64 ------
+1>project6.4.2.cpp
+2>UnitTest6.4.2.cpp
+1>Project6.4.2.vcxproj -> C:\Users\ksush\source\repos\Project6.4.2\x64\Debug\Project6.4.2.exe
+2>UnitTest6.4.2.vcxproj -> C:\Users\ksush\source\repos\Project6.4.2\x64\Debug\UnitTest6.4.2.dll
+========== Сборка: успешно: 2, с ошибками: 0, без изменений: 0, пропущено: 0 ==========

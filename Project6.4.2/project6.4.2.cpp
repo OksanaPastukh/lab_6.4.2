@@ -56,21 +56,26 @@ int Sum(int* p, int n,  int i)
 }
 
 
-void Sort(int* p, int n, int i) // метод обміну (бульбашки)
+void Sort(int* p, int n, int i, int j,int &k) // метод обміну (бульбашки)
 {
-	int k = 0; // показник, чи були обміни
-	for (int j = 0; j < n - i; j++) // номер поточного елемента
-		if (abs(p[j]) > abs(p[j + 1])) // якщо порушено порядок
-		{ // - обмін елементів місцями
+	    // тест github
+		//if (abs(p[j]) > abs(p[j + 1])) 
+		if(true)
+		{ 
 			int tmp = p[j];
 			p[j] = p[j + 1];
 			p[j + 1] = tmp;
 			k = 1;
 		}
-	if (k == 0) // якщо обмінів - не було,
-		return; // то припиняємо процес
-	if (i < n - 1) // i - лічильник ітерацій
-		Sort(p, n, i + 1); // перехід до наступної ітерації
+		if (j < n - i - 1)
+			Sort(p, n, i, j + 1, k);
+		if (k == 0)
+			return;
+		if (i < n - 1)
+		{
+			k = 0;
+			Sort(p, n, i + 1, 0, k);
+		}
 }
 int main()
 {
@@ -91,7 +96,8 @@ int main()
 	int min_index = 0;
 	find_min_index(p, n, 0, &min_value, &min_index);
 	cout << "S = " << Sum(p, n, min_index +1) << endl;
-	Sort(p, n, 1);
+	int k = 0;
+	Sort(p, n, 1,0, k);
 	Print(p, n, 0);
 	delete[] p;
 	return 0;
